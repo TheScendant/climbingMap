@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import geoMap from './geoJSONs/geoMap';
+import geoMap from './geoJSONs/usaMap';
 import pins from './geoJSONs/locations';
 import * as d3 from 'd3';
 import './Map.css';
@@ -25,6 +25,7 @@ class Map extends Component {
     const t = d3.event.transform;
     const tString = `translate(${t.x}, ${t.y}) scale(${t.k})`;
     d3.select(this.countryPaths).attr("transform", tString);
+    d3.select(this.locationPins).attr("transform", tString);
   }
   createPins() {
     const pinsSel = d3.select(this.locationPins);
@@ -42,11 +43,18 @@ class Map extends Component {
       pinsSel
       .selectAll("circle")
       .data(pins.features)
-      .attr("class", "location-pin")
+      .attr("class", d => {
+        let res;
+        if (d.properties.location_type === "Outdoor") {
+          res = "location-pin-outdoor";
+        } else {
+          res = "location-pin-indoor";
+        }
+        return `${res} location-pin`;
+      })
       .attr("cx", d => this.projection(d.geometry.coordinates)[0])
       .attr("cy", d => this.projection(d.geometry.coordinates)[1])
       .attr("r", 5);
-
   }
   createMap() {
     this.projection = d3.geoMercator().fitSize([this.svg.clientWidth, this.svg.clientHeight], geoMap);
@@ -70,6 +78,7 @@ class Map extends Component {
     countPathsSel
       .selectAll('path')
       .data(geoMap.features)
+      .attr("class", "country-path")
       .attr("d", d => this.pathGenerator(d));
   }
   render() {

@@ -10,7 +10,24 @@
         "type": "Point"
       },
       "properties": {
-        "location_name": "New River Gorge"
+        "location_name": "New River Gorge",
+        "location_type": "Outdoor",
+        "climb_type": ["lead"]
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -97.69638889,
+          30.26319444
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "location_name": "Austin Boulder Project",
+        "location_type": "Indoor",
+        "climb_type": ["boulder"]
       },
       "type": "Feature"
     }
