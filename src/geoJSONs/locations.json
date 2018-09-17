@@ -1,0 +1,18 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "geometry": {
+        "coordinates": [
+          -80.842,
+          38.242
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "location_name": "New River Gorge"
+      },
+      "type": "Feature"
+    }
+  ]
+}
