@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import geoMap from './geoJSONs/lowerFourtyEight';
 import pins from './geoJSONs/locations';
+import cities from './geoJSONs/cities';
 import * as d3 from 'd3';
 import './Map.css';
 
@@ -10,6 +11,7 @@ class Map extends Component {
     this.createMap = this.createMap.bind(this);
     this.createPins = this.createPins.bind(this);
     this.zoomFunction = this.zoomFunc.bind(this);
+    this.createCities = this.createCities.bind(this);
     window.d3 = d3; // console debugging
   }
   componentDidMount() {
@@ -25,7 +27,32 @@ class Map extends Component {
     const t = d3.event.transform;
     const tString = `translate(${t.x}, ${t.y}) scale(${t.k})`;
     d3.select(this.countryPaths).attr("transform", tString);
-    d3.select(this.locationPins).attr("transform", tString);
+    const locationPins = d3.select(this.locationPins)
+    locationPins.attr("transform", tString);
+    locationPins.selectAll("circle").attr("r", 5 / t.k);
+
+    const cities = d3.select(this.cityData);
+    cities.attr("transform", tString);
+    if (t.k > 4) {
+      this.createCities();
+    } 
+  }
+  createCities() {
+    const citySel = d3.select(this.cityData);
+    const citySelEnter = citySel
+      .selectAll("text")
+      .data(cities)
+      .enter();
+    citySelEnter
+      .append("text")
+      .text(d => d.city)
+      .attr("x", d => this.projection([d.longitude, d.latitude])[0])
+      .attr("y", d => this.projection([d.longitude, d.latitude])[1])
+      .attr("class", "city-text");
+    citySelEnter.append("circle")
+      .attr("cx", d => this.projection([d.longitude, d.latitude])[0])
+      .attr("cy", d => this.projection([d.longitude, d.latitude])[1])
+      .attr("r", 2);
   }
   createPins() {
     const pinsSel = d3.select(this.locationPins);
@@ -33,14 +60,13 @@ class Map extends Component {
       .selectAll("circle")
       .data(pins.features) // dosomething make these more unique
       .enter()
-      .append("circle")
-      pinsSel
+      .append("circle");
+    pinsSel
       .selectAll("circle")
       .data(pins.features)
       .exit()
       .remove();
-
-      pinsSel
+    pinsSel
       .selectAll("circle")
       .data(pins.features)
       .attr("class", d => {
@@ -86,6 +112,7 @@ class Map extends Component {
       <svg id="map-svg" ref={svg => this.svg = svg} >
         <g id="g-country-paths" ref={g => this.countryPaths = g}></g>
         <g id="g-location-pins" ref={g => this.locationPins = g}></g>
+        <g id="g-cities" ref={g => this.cityData = g}></g>
       </svg>
     );
   }
