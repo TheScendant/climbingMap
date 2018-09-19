@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import geoMap from './geoJSONs/usaMap';
+import geoMap from './geoJSONs/lowerFourtyEight';
 import pins from './geoJSONs/locations';
 import * as d3 from 'd3';
 import './Map.css';
