@@ -13,6 +13,9 @@ class Map extends Component {
     this.zoomFunction = this.zoomFunc.bind(this);
     this.createCities = this.createCities.bind(this);
     window.d3 = d3; // console debugging
+    this.state = {
+      citiesPlaced: false
+    }
   }
   componentDidMount() {
     this.createMap();
@@ -33,9 +36,22 @@ class Map extends Component {
 
     const cities = d3.select(this.cityData);
     cities.attr("transform", tString);
-    if (t.k > 4) {
+    cities.selectAll("circle").attr("r", 2 / t.k);
+    cities.selectAll("text").attr("font-size", `${12 / t.k}px`);
+    if (t.k >= 4 && !this.state.citiesPlaced) {
       this.createCities();
-    } 
+      this.setState({
+        citiesPlaced: true,
+      });
+    } else if (t.k < 4 && this.state.citiesPlaced){
+      this.hideCities();
+      this.setState({
+        citiesPlaced: false,
+      });
+    }
+  }
+  hideCities() {
+    console.warn("hiding cities");
   }
   createCities() {
     const citySel = d3.select(this.cityData);
@@ -48,11 +64,12 @@ class Map extends Component {
       .text(d => d.city)
       .attr("x", d => this.projection([d.longitude, d.latitude])[0])
       .attr("y", d => this.projection([d.longitude, d.latitude])[1])
+      .attr("font-size", "3px")
       .attr("class", "city-text");
     citySelEnter.append("circle")
       .attr("cx", d => this.projection([d.longitude, d.latitude])[0])
       .attr("cy", d => this.projection([d.longitude, d.latitude])[1])
-      .attr("r", 2);
+      .attr("r", 0.5);
   }
   createPins() {
     const pinsSel = d3.select(this.locationPins);
