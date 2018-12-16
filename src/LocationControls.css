@@ -5,14 +5,14 @@
   width: 100%;
 }
 .location-controller {
-  background-color: #ddd;
+  background-color: #d4e2d2;
   margin: 2px;
   padding: 2px;
   border-radius: 2px;
   cursor: pointer;
 }
 .location-controller.selected {
-  background-color: #bbb;
+  background-color: #4acb4a;
   margin: 2px;
   padding: 2px;
   border-radius: 2px;

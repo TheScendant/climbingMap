@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import geoMap from './geoJSONs/lowerFourtyEight';
 import pins from './geoJSONs/locations';
-import cities from './geoJSONs/cities';
+import cities from './geoJSONs/selectCities';
 import * as d3 from 'd3';
 import './Map.css';
 

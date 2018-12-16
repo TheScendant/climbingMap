@@ -6,10 +6,11 @@ class LocationControls extends Component {
   render() {
     return (
       <div className="location-controls">
-        <LocationController name="Indoor"/>
-        <LocationController name="Outdoor"/>
-        <LocationController name="Bouldering"/>
-        <LocationController name="Sport"/>
+        <LocationController selected={false} name="Indoor"/>
+        <LocationController selected={true} name="Outdoor"/>
+        <LocationController selected={false} name="Bouldering"/>
+        <LocationController selected={true} name="Sport"/>
+        <LocationController selected={false} name="Trad"/>
       </div>
     );
   }
