@@ -43,7 +43,7 @@ class Map extends Component {
       this.setState({
         citiesPlaced: true,
       });
-    } else if (t.k < 4 && this.state.citiesPlaced){
+    } else if (t.k < 4 && this.state.citiesPlaced){ // dosomething this logic must be flawed
       this.hideCities();
       this.setState({
         citiesPlaced: false,
