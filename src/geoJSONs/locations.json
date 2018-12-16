@@ -171,6 +171,41 @@
         ]
       },
       "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -71.17,
+          43.114
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "location_name": "Pawtuckaway",
+        "location_type": "Outdoor",
+        "climb_type": [
+          "sport",
+          "boulder"
+        ]
+      },
+      "type": "Feature"
+    },{
+      "geometry": {
+        "coordinates": [
+          -71.67,
+          44.168
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "location_name": "Franconia Notch",
+        "location_type": "Outdoor",
+        "climb_type": [
+          "sport",
+          "trad"
+        ]
+      },
+      "type": "Feature"
     }
   ]
 }
