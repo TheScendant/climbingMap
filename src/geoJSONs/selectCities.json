@@ -4804,15 +4804,6 @@
       "population": "41705", 
       "rank": "880", 
       "state": "Virginia"
-  }, 
-  {
-      "city": "Covington", 
-      "growth_from_2000_to_2013": "-4.7%", 
-      "latitude": 39.0836712, 
-      "longitude": -84.5085536, 
-      "population": "40956", 
-      "rank": "894", 
-      "state": "Kentucky"
   },
   {
       "city": "Atlantic City", 

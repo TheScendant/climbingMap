@@ -7,7 +7,6 @@ class LocationController extends Component {
     };
   }
   handleClick() {
-    console.warn("clicked");
     this.setState({
       selected: !this.state.selected
     });

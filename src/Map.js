@@ -24,7 +24,6 @@ class Map extends Component {
   componentDidUpdate() {
     this.createMap();
     this.createPins();
-    console.warn('componentDidUpdate');
   }
   zoomFunc() {
     const t = d3.event.transform;
@@ -43,7 +42,7 @@ class Map extends Component {
       this.setState({
         citiesPlaced: true,
       });
-    } else if (t.k < 4 && this.state.citiesPlaced){ // dosomething this logic must be flawed
+    } else if (t.k < 4 && this.state.citiesPlaced){
       this.hideCities();
       this.setState({
         citiesPlaced: false,
@@ -51,7 +50,7 @@ class Map extends Component {
     }
   }
   hideCities() {
-    console.warn("hiding cities");
+    d3.selectAll(".city-text, .city-text-dot").remove();
   }
   createCities() {
     const citySel = d3.select(this.cityData);
@@ -69,7 +68,8 @@ class Map extends Component {
     citySelEnter.append("circle")
       .attr("cx", d => this.projection([d.longitude, d.latitude])[0])
       .attr("cy", d => this.projection([d.longitude, d.latitude])[1])
-      .attr("r", 0.5);
+      .attr("r", 0.5)
+      .attr("class", "city-text-dot");
   }
   createPins() {
     const pinsSel = d3.select(this.locationPins);
@@ -102,7 +102,7 @@ class Map extends Component {
   createMap() {
     this.projection = d3.geoMercator().fitSize([this.svg.clientWidth, this.svg.clientHeight], geoMap);
     this.pathGenerator = d3.geoPath().projection(this.projection);
-    this.zoom = d3.zoom().on("zoom", this.zoomFunction)
+    this.zoom = d3.zoom().scaleExtent([.75, 12]).on("zoom", this.zoomFunction)
     const svgSel = d3.select(this.svg);
     svgSel.call(this.zoom);
     const countPathsSel = d3.select(this.countryPaths);

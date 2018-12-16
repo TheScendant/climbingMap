@@ -12,7 +12,9 @@
       "properties": {
         "location_name": "New River Gorge",
         "location_type": "Outdoor",
-        "climb_type": ["lead"]
+        "climb_type": [
+          "lead"
+        ]
       },
       "type": "Feature"
     },
@@ -27,7 +29,146 @@
       "properties": {
         "location_name": "Austin Boulder Project",
         "location_type": "Indoor",
-        "climb_type": ["boulder"]
+        "climb_type": [
+          "boulder"
+        ]
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -122.310799,
+          47.5936592
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "location_name": "Seattle Boulder Project",
+        "location_type": "Indoor",
+        "climb_type": [
+          "boulder"
+        ]
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -83.6827813,
+          37.7830669
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "location_name": "Red River Gorge",
+        "location_type": "Outdoor",
+        "climb_type": [
+          "sport"
+        ]
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -77.125992,
+          38.800983
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "location_name": "Sportrock Alexandria",
+        "location_type": "Indoor",
+        "climb_type": [
+          "sport",
+          "boulder"
+        ]
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -105.24,
+          39.754
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "location_name": "Clear Creek Canyon",
+        "location_type": "Outdoor",
+        "climb_type": [
+          "sport"
+        ]
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -74.187,
+          41.737
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "location_name": "The Gunks",
+        "location_type": "Outdoor",
+        "climb_type": [
+          "trad"
+        ]
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -71.837,
+          43.802
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "location_name": "Rumney",
+        "location_type": "Outdoor",
+        "climb_type": [
+          "sport"
+        ]
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -77.684737,
+          43.084305
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "location_name": "The Barn",
+        "location_type": "Indoor",
+        "climb_type": [
+          "boulder"
+        ]
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -79.325,
+          38.665
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "location_name": "Franklin",
+        "location_type": "Outdoor",
+        "climb_type": [
+          "sport"
+        ]
       },
       "type": "Feature"
     }
