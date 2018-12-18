@@ -4,7 +4,6 @@ import pins from './geoJSONs/locations';
 import cities from './geoJSONs/selectCities';
 import * as d3 from 'd3';
 import './Map.css';
-import Tooltip from './Tooltip';
 
 class Map extends Component {
   constructor(props) {
