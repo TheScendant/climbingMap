@@ -8,13 +8,14 @@ html, body, #root {
   height: 100%;
   align-items: center;
   flex-direction: column;
+  background-color: #aac9a5;
 }
 #map {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 80%;
-  width: 90%;
+  height: 90%;
+  width: 95%;
 }
 .full-height {
   height: 100%;

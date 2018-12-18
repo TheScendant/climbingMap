@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import "./Header.css"
 class Header extends Component {
 
   render() {
-    return "Climbing Locations"
+    return <div id="header"></div>
   }
 }
 export default Header;

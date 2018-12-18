@@ -18,3 +18,7 @@
 .location-pin-indoor {
   fill: blue;
 }
+.tooltip {
+  fill: #d4e2d2;
+  font-size: 20px;
+}
