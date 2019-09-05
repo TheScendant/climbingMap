@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "d3": "^5.7.0",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
-    "react-redux": "^5.0.7",
+    "d3": "^5.11.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-redux": "^5.1.1",
     "react-scripts": "1.1.5"
   },
   "scripts": {
@@ -17,6 +17,6 @@
     "cypress:open": "cypress open"
   },
   "devDependencies": {
-    "cypress": "^3.1.0"
+    "cypress": "^3.4.1"
   }
 }
